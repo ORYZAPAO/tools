@@ -9,8 +9,13 @@ import pytz
 ## Check Command Parameter
 ##
 if( len(sys.argv) <= 2 ):
-    print("Usage:: diffdate.py <Start Day> <Last Day> ")
-    print(" Exp.) >diffdate.py 20170101 20170201")
+    print(" Usage:: diffdate.py <Start Day> <Last Day> ")
+    print("")
+    print("   Exp.) >diffdate.py 20170101 20170201")
+    print("          [Start Day] 2017-01-01")
+    print("          [End   Day] 2017-02-01")
+    print("")
+    print("          日差 31日 (この期間の日数：32日)")
     quit()
 
 ## Get Start Day, End Day
