@@ -1,23 +1,38 @@
 #!/usr/bin/python
 # coding:utf-8
 ##/from datetime import datetime,timedelta
+
+import sys
 import datetime
 import pytz
+##
+##
+if( len(sys.argv) <= 2 ):
+    print("Usage:: diffdate.py <Start Day> <Last Day> ")
+    print(" Exp.) >diffdate.py 20170101 20170201")
+    quit()
 
-# 現在時刻を元に加減算する
+s_year  = int(sys.argv[1][0:4])
+s_month = int(sys.argv[1][4:6])
+s_day   = int(sys.argv[1][6:8])
+
+l_year  = int(sys.argv[2][0:4])
+l_month = int(sys.argv[2][4:6])
+l_day   = int(sys.argv[2][6:8])
+    
+# 元に加減算する
 timezone = pytz.timezone('Asia/Tokyo')
-delta     = datetime.timedelta(days=+1)
+# delta     = datetime.timedelta(days=+1)
 #last_day       = datetime.last_day(tz=timezone)
 #tomorrow   = now + delta
-first_day  = datetime.date(year=2017, month=9, day=29) ### 開始日
-last_day   = datetime.date(year=2018, month=3, day=31) ### 終了日
-##last_day   = datetime.date(year=2017, month=9, day=30)
-print("開始日 {0}".format(first_day))
-print("終了日 {0}".format(last_day))
+first_day  = datetime.date(year=s_year, month=s_month, day=s_day) ### 開始日
+last_day   = datetime.date(year=l_year, month=l_month, day=l_day) ### 終了日
+print("[Start Day] {0}".format(first_day))
+print("[End   Day] {0}".format(last_day))
 
 # ２つの日付の差を算出する 
-delta = last_day - first_day + datetime.timedelta(days=1)
-print("差は{0}日".format(delta.days))
+delta   = last_day - first_day 
+period  = last_day - first_day + datetime.timedelta(days=1) 
+print("")
+print("  日差 {0}日 (この期間の日数：{1}日)".format(delta.days, period.days))
 
-## 検算
-print(2+31+30+31+31+28+31)
