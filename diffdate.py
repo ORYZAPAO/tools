@@ -4,7 +4,7 @@
 
 import sys
 import datetime
-import pytz
+##import pytz
 
 ## Check Command Parameter
 ##
@@ -30,7 +30,7 @@ l_day   = int(sys.argv[2][6:8])
 
 ## Calculate Difference
 ##
-timezone = pytz.timezone('Asia/Tokyo')
+##timezone = pytz.timezone('Asia/Tokyo')
 # delta     = datetime.timedelta(days=+1)
 #last_day       = datetime.last_day(tz=timezone)
 #tomorrow   = now + delta
