@@ -1,4 +1,5 @@
+
 echo "=="
 echo "== Setup RISC Gnu Toolchain"
 echo "=="
-export PATH=/opt/riscv/bin:$PATH
+export PATH=~/tools_riscv/bin:$PATH
